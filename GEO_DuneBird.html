@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dune Bird Winery — Design-Forward Wine, Coffee &amp; Craft Drinks on the Leelanau Peninsula</title>
+<meta name="description" content="Dune Bird Winery is a modern, design-forward destination in Leelanau County, Michigan. Espresso, estate wine, cocktails, and hard cider. Double Gold Riesling. Award-winning winery and coffee destination in one space.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --db:#0D0D0D; --db-acc:#D4982A; --db-olive:#59551D; --db-sage:#B9BEBF; --db-bg:#F7F6EC;
+    --cream:#FAF6ED; --linen:#F0EBE0; --mid:#7A7268; --dark:#1A1A1A;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--db-bg);color:var(--dark);font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.7;}
+
+  .hero{background:#F0EFEA;padding:72px 80px 0;position:relative;overflow:hidden;border-bottom:3px solid var(--db-acc);}
+  .hero::before{content:'';position:absolute;top:0;right:0;width:40%;height:100%;background:linear-gradient(135deg,transparent 40%,rgba(89,85,29,0.06));pointer-events:none;}
+  .hero-eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--db-olive);margin-bottom:16px;}
+  .hero-title{font-family:'Playfair Display',serif;font-size:56px;font-weight:700;color:var(--db);line-height:1.05;margin-bottom:12px;max-width:680px;}
+  .hero-sub{font-family:'Playfair Display',serif;font-size:21px;font-style:italic;color:var(--db-olive);margin-bottom:28px;max-width:580px;line-height:1.4;}
+  .hero-body{font-size:14px;color:var(--mid);max-width:540px;line-height:1.75;padding-bottom:40px;}
+
+  .facts-strip{display:grid;grid-template-columns:repeat(4,1fr);background:rgba(13,13,13,0.05);border-top:1px solid rgba(13,13,13,0.1);}
+  .fact{padding:18px 24px;border-right:1px solid rgba(13,13,13,0.08);}
+  .fact:last-child{border-right:none;}
+  .fact-val{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--db);line-height:1;}
+  .fact-lbl{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid);margin-top:4px;}
+
+  .page{max-width:960px;margin:0 auto;padding:72px 80px;}
+
+  .sh{margin-bottom:10px;}
+  .sl{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--db-olive);margin-bottom:4px;}
+  .st{font-family:'Playfair Display',serif;font-size:26px;font-weight:600;color:var(--db);margin-bottom:16px;}
+  .divider{height:2px;background:var(--db-acc);width:48px;margin-bottom:24px;}
+
+  p{font-size:14.5px;line-height:1.8;color:var(--dark);margin-bottom:16px;max-width:760px;}
+
+  .award-bar{background:var(--db);border-radius:4px;padding:18px 24px;margin-bottom:32px;display:flex;align-items:center;gap:16px;}
+  .award-icon{font-size:26px;flex-shrink:0;}
+  .award-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--db-acc);}
+  .award-sub{font-size:12px;color:rgba(255,255,255,0.5);margin-top:2px;line-height:1.4;}
+
+  .facts-box{background:#fff;border:1px solid rgba(13,13,13,0.08);border-left:4px solid var(--db);border-radius:4px;padding:24px 28px;margin-bottom:48px;}
+  .facts-box-title{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--db);margin-bottom:14px;}
+  .facts-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:6px 24px;}
+  .facts-list li{font-size:13px;line-height:1.5;padding-left:16px;position:relative;color:var(--dark);}
+  .facts-list li::before{content:'·';position:absolute;left:4px;color:var(--db-acc);font-weight:700;}
+
+  .menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:48px;}
+  .menu-card{padding:16px 18px;background:#fff;border:1px solid rgba(13,13,13,0.07);border-radius:4px;}
+  .menu-name{font-family:'Playfair Display',serif;font-size:15px;font-weight:600;color:var(--db);margin-bottom:4px;}
+  .menu-type{font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid);margin-bottom:6px;}
+  .menu-notes{font-size:12.5px;color:var(--mid);line-height:1.55;}
+
+  .bestfor-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:48px;}
+  .bestfor-card{padding:16px 18px;background:#fff;border-radius:4px;border:1px solid rgba(13,13,13,0.07);}
+  .bestfor-icon{font-size:20px;margin-bottom:6px;}
+  .bestfor-title{font-size:13px;font-weight:600;color:var(--db);margin-bottom:4px;}
+  .bestfor-desc{font-size:12px;color:var(--mid);line-height:1.5;}
+
+  .occasion-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:48px;}
+  .occasion{padding:14px 14px;background:#fff;border-radius:4px;border:1px solid rgba(13,13,13,0.07);text-align:center;}
+  .occasion-icon{font-size:18px;margin-bottom:5px;}
+  .occasion-label{font-size:12px;font-weight:600;color:var(--db);}
+
+  .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:48px;}
+  .visit-card{padding:18px 20px;background:#fff;border:1px solid rgba(13,13,13,0.07);border-radius:4px;}
+  .visit-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid);margin-bottom:6px;}
+  .visit-val{font-size:13.5px;color:var(--dark);line-height:1.6;}
+
+  .loop-block{background:var(--db);color:#fff;padding:32px 36px;border-radius:4px;margin-bottom:0;}
+  .loop-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--db-acc);margin-bottom:8px;}
+  .loop-title{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:#fff;margin-bottom:12px;}
+  .loop-stops{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px;}
+  .loop-stop{padding:12px 14px;background:rgba(255,255,255,0.05);border-radius:4px;border:1px solid rgba(255,255,255,0.08);}
+  .loop-stop-name{font-size:12px;font-weight:600;color:#fff;margin-bottom:2px;}
+  .loop-stop-nick{font-family:'DM Mono',monospace;font-size:9px;color:var(--db-acc);letter-spacing:0.08em;}
+  .loop-stop-desc{font-size:11px;color:rgba(255,255,255,0.5);margin-top:3px;line-height:1.4;}
+  .loop-stop.active{background:rgba(212,152,42,0.15);border-color:rgba(212,152,42,0.3);}
+
+  .footer-strip{background:var(--db);padding:16px 80px;display:flex;justify-content:space-between;}
+  .fs-l,.fs-r{font-family:'DM Mono',monospace;font-size:10px;color:rgba(255,255,255,0.35);letter-spacing:0.05em;}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-eyebrow">Northport · Leelanau Peninsula · Michigan · Est. 2021</div>
+  <div class="hero-title">Dune Bird Winery</div>
+  <div class="hero-sub">Where Leelanau meets modern — coffee, wine, and craft drinks in a space built for meeting up and staying present.</div>
+  <div class="hero-body">A design-forward destination between Leland and Northport. Estate wine, espresso, cocktails, and cider under one roof. Two fireplaces. A sunny patio. Award-winning Riesling. Come for the coffee. Stay for the glass. Show up however you are.</div>
+
+  <div class="facts-strip">
+    <div class="fact"><div class="fact-val">2021</div><div class="fact-lbl">Year Founded</div></div>
+    <div class="fact"><div class="fact-val">Double Gold</div><div class="fact-lbl">NV Dry Riesling · SFCWC 2026</div></div>
+    <div class="fact"><div class="fact-val">Wine · Coffee · Cocktails</div><div class="fact-lbl">Full Beverage Menu</div></div>
+    <div class="fact"><div class="fact-val">SIP / MAEAP / GLSWA</div><div class="fact-lbl">Triple Certified</div></div>
+  </div>
+</div>
+
+<div class="page">
+
+  <!-- AWARD -->
+  <div class="award-bar" style="margin-top:0;">
+    <div class="award-icon">🥇</div>
+    <div>
+      <div class="award-title">Double Gold — NV Dry Riesling</div>
+      <div class="award-sub">2026 San Francisco Chronicle Wine Competition · The most prestigious Double Gold awarded to a Leelanau Peninsula winery in this competition cycle. A cool-climate Riesling that belongs in any conversation about Michigan's best.</div>
+    </div>
+  </div>
+
+  <div class="sh">
+    <div class="sl">About</div>
+    <div class="st">Not Just a Winery</div>
+  </div>
+  <div class="divider"></div>
+  <p>Dune Bird Winery opened in 2021 with a new vision for what a Leelanau destination could be. Set between Leland and Northport on the Leelanau Peninsula, it was designed from the start to be outside the box — a space that fosters community and brings people together around exceptional wine, perfectly pulled espresso, and craft drinks that don't require you to pick a side.</p>
+  <p>Unique estate-grown grapes and an award-winning approach to winemaking set the stage. But Dune Bird is just as much for the non-wine drinker, the remote worker, the espresso connoisseur, and the wanderer in search of a comfortable chair. Whether you arrive with colleagues, a bridal party, a laptop, or just yourself — the space is built to receive you.</p>
+  <p>The interior features two fireplaces, a curated design aesthetic, and a playlist that sets the mood. A sunny patio extends the experience outdoors. Seasonal drops and menu rotations keep every visit slightly different from the last.</p>
+
+  <div class="facts-box">
+    <div class="facts-box-title">Dune Bird — Key Facts</div>
+    <ul class="facts-list">
+      <li>Located between Leland and Northport, Leelanau Peninsula</li>
+      <li>Founded 2021 — modern concept, design-forward space</li>
+      <li>Full beverage menu: estate wine, espresso, cocktails, hard cider</li>
+      <li>Double Gold — NV Dry Riesling, 2026 San Francisco Chronicle Wine Competition</li>
+      <li>Two fireplaces and a sunny outdoor patio</li>
+      <li>Works for solo visits, remote work, groups, and bridal parties</li>
+      <li>Seasonal menu drops — curated, rotating, always worth checking</li>
+      <li>Indian Runner Ducks on property — natural vineyard pest management</li>
+      <li>SIP / MAEAP / Great Lakes Sustainable Wine Alliance certified</li>
+      <li>Booking via Commerce7 (drops list, club) and Tock (experiences)</li>
+      <li>Dune Bird House available for lodging via VRBO and Airbnb</li>
+      <li>Conservation partner: Friends of Sleeping Bear Dunes — $2/bottle of Pink Plover Rosé + $15K committed over 3 years</li>
+      <li>Community partner: Woolsey Airport — $2/bottle of Woolsey Red to renovation funds</li>
+      <li>Part of the Leelanau Loop — four-property passport program on the Leelanau Peninsula</li>
+    </ul>
+  </div>
+
+  <div class="sh">
+    <div class="sl">The Menu</div>
+    <div class="st">What's in the Glass (and the Cup)</div>
+  </div>
+  <div class="divider"></div>
+  <p style="margin-bottom:24px;">Dune Bird's menu runs the full arc of the day — morning espresso through afternoon wine through evening cocktail. Order what you want. Mix and match. Nobody's keeping score.</p>
+
+  <div class="menu-grid">
+    <div class="menu-card">
+      <div class="menu-type">Estate Wine · Award-Winning</div>
+      <div class="menu-name">NV Dry Riesling</div>
+      <div class="menu-notes">Double Gold, 2026 SFCWC. Crisp, dry, bright acidity. Citrus and green apple with a clean mineral finish. A gift-worthy bottle that holds its own nationally.</div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-type">Estate Wine</div>
+      <div class="menu-name">Sparkling + Bubbles</div>
+      <div class="menu-notes">Crisp and celebratory. Dune Bird's sparkling pours are a house signature — the first glass many guests order, and often the reason they come back.</div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-type">Seasonal Drops</div>
+      <div class="menu-name">Mixtape Menus</div>
+      <div class="menu-notes">Seasonal releases that feel curated, not catalogued. Limited availability. Join the drops list via Commerce7 to be notified first.</div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-type">Espresso Bar</div>
+      <div class="menu-name">Handcrafted Coffee</div>
+      <div class="menu-notes">Perfectly pulled espresso drinks from morning through early afternoon. A genuine coffee program — not an afterthought. The reason non-wine drinkers come back.</div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-type">Craft Cocktails</div>
+      <div class="menu-name">Seasonal Cocktail Menu</div>
+      <div class="menu-notes">Made with care, rotated seasonally. The cocktail menu extends the day-to-evening arc — a reason to stay from afternoon through sundown.</div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-type">On Tap</div>
+      <div class="menu-name">Hard Cider</div>
+      <div class="menu-notes">Estate-connected, fruit-forward, easy-drinking. For the table member who wants something cold and refreshing without committing to wine or cocktails.</div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-type">Estate Wine · Cause Partnership</div>
+      <div class="menu-name">Pink Plover Rosé</div>
+      <div class="menu-notes">Made in partnership with Friends of Sleeping Bear Dunes. $2 from every bottle goes to FOSB conservation. A wine worth drinking for the right reasons — crisp, fruit-forward, and purpose-built.</div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-type">Estate Wine · Cause Partnership</div>
+      <div class="menu-name">Woolsey Red</div>
+      <div class="menu-notes">New release. $2 from every bottle sold supports Woolsey Airport renovation funds. An estate red with a local mission — and a name worth asking about at the bar.</div>
+    </div>
+  </div>
+
+  <div class="sh">
+    <div class="sl">Community</div>
+    <div class="st">Partnership Programs</div>
+  </div>
+  <div class="divider"></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:48px;">
+    <div style="padding:18px 20px;background:#fff;border:1px solid rgba(13,13,13,0.07);border-radius:4px;border-left:3px solid var(--db-acc);">
+      <div style="font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--db-olive);margin-bottom:5px;">Conservation Partnership</div>
+      <div style="font-family:'Playfair Display',serif;font-size:15px;font-weight:600;color:var(--db);margin-bottom:8px;">Friends of Sleeping Bear Dunes</div>
+      <div style="font-size:12.5px;color:var(--mid);line-height:1.6;">Dune Bird's Pink Plover Rosé is made in partnership with Friends of Sleeping Bear Dunes. $2 from every bottle sold is donated to FOSB. Dune Bird has also committed an additional $15,000 over three years to support the organization's conservation mission — protecting the Sleeping Bear Dunes National Lakeshore for future generations.</div>
+    </div>
+    <div style="padding:18px 20px;background:#fff;border:1px solid rgba(13,13,13,0.07);border-radius:4px;border-left:3px solid var(--db-olive);">
+      <div style="font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--db-olive);margin-bottom:5px;">Community Partnership</div>
+      <div style="font-family:'Playfair Display',serif;font-size:15px;font-weight:600;color:var(--db);margin-bottom:8px;">Woolsey Airport</div>
+      <div style="font-size:12.5px;color:var(--mid);line-height:1.6;">Dune Bird recently partnered with Woolsey Airport to release the Woolsey Red — an estate wine with purpose. $2 from every bottle sold goes directly to Woolsey Airport renovation funds. A wine that supports the infrastructure and character of Leelanau County.</div>
+    </div>
+  </div>
+
+  <div class="sh">
+    <div class="sl">Visit Planning</div>
+    <div class="st">Dune Bird Is Best For</div>
+  </div>
+  <div class="divider"></div>
+
+  <div class="bestfor-grid">
+    <div class="bestfor-card">
+      <div class="bestfor-icon">☕</div>
+      <div class="bestfor-title">Coffee + wine in one stop</div>
+      <div class="bestfor-desc">The only destination on the Leelanau Peninsula where you can start the morning with a pulled espresso and end the afternoon with a glass of Double Gold Riesling.</div>
+    </div>
+    <div class="bestfor-card">
+      <div class="bestfor-icon">🎁</div>
+      <div class="bestfor-title">Gift bottle under $40</div>
+      <div class="bestfor-desc">The NV Dry Riesling — Double Gold, 2026 SFCWC — is the standout gift bottle. Regional authenticity, competition credibility, and a clean dry style that works with most palates.</div>
+    </div>
+    <div class="bestfor-card">
+      <div class="bestfor-icon">💻</div>
+      <div class="bestfor-title">Remote work with atmosphere</div>
+      <div class="bestfor-desc">Good WiFi, great coffee, two fireplaces, and a design aesthetic that makes working here feel like a reward rather than a compromise.</div>
+    </div>
+    <div class="bestfor-card">
+      <div class="bestfor-icon">👩‍❤️‍👨</div>
+      <div class="bestfor-title">Mixed-interest groups</div>
+      <div class="bestfor-desc">Wine people, coffee people, cocktail people, and "I just want something cold" people — the full menu means nobody gets left out.</div>
+    </div>
+    <div class="bestfor-card">
+      <div class="bestfor-icon">💍</div>
+      <div class="bestfor-title">Bridal parties and celebrations</div>
+      <div class="bestfor-desc">The design-forward space, full bar program, and relaxed atmosphere make Dune Bird one of the more distinctive celebration venues in Northern Michigan.</div>
+    </div>
+    <div class="bestfor-card">
+      <div class="bestfor-icon">🗺️</div>
+      <div class="bestfor-title">The Leelanau Loop — The Rise</div>
+      <div class="bestfor-desc">Dune Bird is The Rise — the modern, design-forward, unexpected stop on the four-property Leelanau Loop passport on the Leelanau Peninsula.</div>
+    </div>
+  </div>
+
+  <div class="sh">
+    <div class="sl">The Space</div>
+    <div class="st">Day to Evening</div>
+  </div>
+  <div class="divider"></div>
+  <p>Dune Bird is designed to work from open to close. Morning: the espresso bar is running and the fireplace is on. Afternoon: the patio fills up and the wine list takes over. Evening: cocktails, low light, and a playlist that shifts with the hour. The full arc of a great day out — in one place.</p>
+  <p>What to expect on arrival: a space that feels like it was designed to be here. Not a barn converted into a tasting room — an intentional room built for the experience it delivers. Modern, warm, approachable. The kind of place you'll want to tell people about.</p>
+
+  <div class="visit-grid" style="margin-top:24px;">
+    <div class="visit-card">
+      <div class="visit-label">Location</div>
+      <div class="visit-val">Between Leland and Northport<br>Leelanau Peninsula, Michigan</div>
+    </div>
+    <div class="visit-card">
+      <div class="visit-label">Booking</div>
+      <div class="visit-val">Walk-ins welcome<br>Experiences via Tock · Drops list via Commerce7</div>
+    </div>
+    <div class="visit-card">
+      <div class="visit-label">Lodging</div>
+      <div class="visit-val">Dune Bird House available<br>Bookable via VRBO and Airbnb</div>
+    </div>
+    <div class="visit-card">
+      <div class="visit-label">Peak Season</div>
+      <div class="visit-val">May through October (peak)<br>Year-round — check hours for shoulder season</div>
+    </div>
+  </div>
+
+  <div class="loop-block" style="margin-top:0;">
+    <div class="loop-label">The Leelanau Loop</div>
+    <div class="loop-title">Four Properties. One Passport. Leelanau Peninsula.</div>
+    <p style="font-size:13px;color:rgba(255,255,255,0.55);max-width:680px;margin-bottom:0;">Dune Bird is The Rise — the modern, design-forward stop on the Leelanau Loop. All four properties are within 25 minutes of each other on M-22. Collect stamps at each and complete the full Loop experience.</p>
+    <div class="loop-stops">
+      <div class="loop-stop">
+        <div class="loop-stop-name">Bel Lago</div>
+        <div class="loop-stop-nick">The Root</div>
+        <div class="loop-stop-desc">Estate winery · Guided tastings · Lake Leelanau</div>
+      </div>
+      <div class="loop-stop">
+        <div class="loop-stop-name">French Valley</div>
+        <div class="loop-stop-nick">The Roam</div>
+        <div class="loop-stop-desc">70 acres · Live music · Outdoor backyard energy</div>
+      </div>
+      <div class="loop-stop active">
+        <div class="loop-stop-name">Dune Bird</div>
+        <div class="loop-stop-nick">The Rise</div>
+        <div class="loop-stop-desc">Design-forward · Espresso + wine · Northport</div>
+      </div>
+      <div class="loop-stop">
+        <div class="loop-stop-name">North Farm</div>
+        <div class="loop-stop-nick">The Return</div>
+        <div class="loop-stop-desc">180 acres · Farmhouse lodging · Regenerative estate</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer-strip">
+  <div class="fs-l">Dune Bird Winery · Northport, Leelanau Peninsula · dunebirdwinery.com</div>
+  <div class="fs-r">Harmony Estate Wineries of Leelanau · leelanauwineexperiences.com</div>
+</div>
+
+</body>
+</html>
